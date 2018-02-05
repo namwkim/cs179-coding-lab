@@ -30,7 +30,7 @@ let posts = [
 ];
 
 /**
- * TODO 1: Add a new post using "/img/posts3.jpg". Other properties remain the same.
+ * TODO 1: Add a new post using any image (e.g., "/img/posts3.jpg"). Other properties remain the same.
  *  hint: generate a unique id using "uniqueId('post_')"
  *  hint: posts[id] = { ... }
  *  hint: for "datetime", use now (i.e., new Date())
@@ -43,7 +43,7 @@ let posts = [
 
 
 /**
- * TODO 3: Print "posts1" and use the developer console to see if the data looks fine.
+ * TODO 3: Print "posts" and use the developer console to see if the data looks fine.
  */
 
 
@@ -74,7 +74,7 @@ function renderPost(post) {
      *  hint: data-attribute allows us to embed custom data into HTML and retrieve it later using Javascript
      *  hint: in other words, this will allow us to know which post object to update on user actions
      */
-    return `<div class="post" data-post-id="${post.id}">
+    return `<div class="post">
                 <header class="header">
                     <a class="photo" href="/">
                         <img src="${post.userImg}">
@@ -121,7 +121,7 @@ function render(posts) {
 
     imageElms.forEach(el => el.addEventListener('dblclick', function () {
         /**
-         * TODO 7: Print 'this' keyword to the developer console and explain what's contained in 'this'
+         * TODO 8: Print 'this' keyword to the developer console and explain what's contained in 'this'
          *  hint: who is calling this function and when
          */
 
@@ -134,18 +134,17 @@ function render(posts) {
     let commentElms = document.querySelectorAll('.post .add-comment input');
     commentElms.forEach(el => el.addEventListener('change', function () {
         /**
-         * TODO 8: Print 'this.value' to the developer console
+         * TODO 9: Print 'this.value' to the developer console
          */
 
 
         /**
-         * TODO 9: Traverse the DOM to find the div element with a class name of 'post' and 'data-post-id'
+         * TODO 10: Traverse the DOM to find the div element with a class name of 'post' and 'data-post-id'
          *  hint: refer to the rednerPost function
          *  hint: use 'parentNode' to traverse up the DOM tree
          *  hint: use getAttribute to get the value of 'data-post-id' attribute
          */
-        let postId = this.parentNode.parentNode.parentNode.getAttribute('data-post-id');
-        console.log(this.value, postId);
+        let postId = null;
         addComment(posts, postId, 'kgajos', this.value);
         this.value = ''; //empty
     }))
@@ -158,7 +157,6 @@ function increaseLike(posts, postId) {
 
     post.likes = post.likes + 1;
 
-
     localStorage.setItem('posts', JSON.stringify(posts));
 
     render(posts); // re-render with the updated posts
@@ -167,29 +165,24 @@ function increaseLike(posts, postId) {
 
 function addComment(posts, postId, userId, text) {
     /**
-     * TODO 10: Fill in this method 
+     * TODO 11: Fill in this method 
      *  hint: refer to "increaseLike"
      */
-
-    let post = posts.find(p => p.id == postId);// return the first element matching the condition
-    if (!post) return;
-
-    post.comments.push({ userId, text });
-
-    localStorage.setItem('posts', JSON.stringify(posts));
-
-    render(posts); // re-render with the updated posts
 }
 
 
 function initialize() {
-    // try loading data from local storge
-    // API: https://developer.mozilla.org/en-US/docs/Web/API/Storage/getItem
+    /**
+     * TODO 12: Add a comment explaining what this function does 
+     *  hint: https://developer.mozilla.org/en-US/docs/Web/API/Storage/getItem
+     *  hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse 
+     */
+
     let initState = localStorage.getItem('posts');
 
-
-    if (initState != null) {// if there is a presaved state available
-        posts = JSON.parse(initState); // initialize posts with the state.
+    if (initState != null) {
+        // JSON: 
+        posts = JSON.parse(initState); 
     }
     render(posts);
 }
@@ -197,7 +190,7 @@ function initialize() {
 initialize();// call init
 
 /**
- * TODO 11 (Optional): Try adding additional functionalities. For example,
+ * TODO 13 (Optional): Try adding additional functionalities. For example,
  *  1) Clicking the heart icon to increase the number of likes
  *  2) Deleting comments 
  *  3) Adding a new post
