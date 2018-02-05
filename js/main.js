@@ -172,11 +172,6 @@ function addComment(posts, postId, userId, text) {
 
 
 function initialize() {
-    /**
-     * TODO 12: Add a comment explaining what this function does 
-     *  hint: https://developer.mozilla.org/en-US/docs/Web/API/Storage/getItem
-     *  hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse 
-     */
 
     let initState = localStorage.getItem('posts');
 
@@ -190,7 +185,7 @@ function initialize() {
 initialize();// call init
 
 /**
- * TODO 13 (Optional): Try adding additional functionalities. For example,
+ * TODO 12 (Optional): Try adding additional functionalities. For example,
  *  1) Clicking the heart icon to increase the number of likes
  *  2) Deleting comments 
  *  3) Adding a new post
