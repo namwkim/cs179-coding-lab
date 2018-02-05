@@ -15,11 +15,11 @@ export let uniqueId = (prefix) => {
 	return (prefix ? prefix + id	: id);
 };
 
-// return a string as below
+// return time elapsed 
 export let timespan = (date)=>{
     var seconds = Math.floor((new Date() - new Date(date)) / 1000);
 
-    var interval = Math.floor(seconds / 31536000);
+    var interval = Math.floor(seconds / 31556926);
   
     if (interval > 1) {
       return interval + " years";

@@ -69,19 +69,19 @@ let root = (state={}, action) =>{
 }
 
 
-export default function createStore(initState, reducer=root){
+export default function createStore(initState, updateState=root){
   let state = initState;
   let listeners = []
-  function getState(){
-    return currentState;
-  }
+
   function subscribe(listener){
     listeners.push(listener);
   }
+
   function dispatch(action){
-    // update state
-    state  = reducer(state, action);
-    // call listener
+    // update state using the action
+    state  = updateState(state, action);
+
+    // call listener whenever the state is updated
     for (let i=0; i<listeners.length; i++){
       listeners[i].call(null, state);
     }

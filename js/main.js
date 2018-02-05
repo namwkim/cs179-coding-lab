@@ -1,4 +1,6 @@
-import {uniqueId, loadState, saveState} from './utils.js';
+// import utility functions
+import {uniqueId, loadState, saveState} from './utils.js'; 
+// import
 import createStore from './store.js';
 import PostList from './PostList.js';
 
@@ -6,30 +8,31 @@ function render(state, store){
     // restructure the state for presentation (i.e., integrate comments to posts)
     let posts = Object.values(state.posts).map(post=>{
         return {
-            ...post,
-            comments: Object.values(state.comments).filter(c=>c.postId==post.id)
+            ...post, // spread the properties of post
+            // add a new property, comments
+            comments: Object.values(state.comments).filter(c=>c.postId==post.id) // find comments for this post
         }
     })
-    // console.log(posts);
+    // 
     document.querySelector('.main').innerHTML = PostList(posts,store);
 }
 
+
+function initStore(state){
+    let store = createStore(state);
+    console.log(store);
+    store.subscribe((state)=>{ // this will be called whenever state changed
+        saveState(state); //save to local storage
+        render(state, store);
+    })
+    // initial render (pass down the store to connect to child components)
+    render(state, store);  
+}
 
 function initialize(){
     // load data from local storge
     let initstate = loadState();
 
-    let initStore = function(state){
-        let store = createStore(state);
-        console.log(store);
-        store.subscribe((state)=>{ // this will be called whenever state changed
-            saveState(state); //save to local storage
-            render(state, store);
-        })
-        // initial render (pass down the store to connect to child components)
-        render(state, store);
-        
-    }
 
     if (initstate == null){
         fetch('/data/state.json')
@@ -38,14 +41,7 @@ function initialize(){
             .catch(error => console.error('error:', error));
     }else{
         initStore(initstate);
-    }
-
-    // if not read from the file to populate initial data
-    
-    for (let i=0; i<5; i++){
-        console.log(uniqueId('post_'));
-    }
-    
+    }    
 }
 
 
