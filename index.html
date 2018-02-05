@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instagram</title>
+  <link rel="icon" sizes="192x192" href="https://www.instagram.com/static/images/ico/favicon-192.png/b407fa101800.png">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,500" rel="stylesheet">
+  <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet"> -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/post.css">
+  <!-- main.js script will be executed after DOM is initialied; i.e., no need for windown.onload -->
+  <script src="js/main.js" type="module"></script>
+</head>
+<body>
+  <div class="root">    
+    <main class="main">
+      <!-- snippet below will be erased and re-rendered by javascript -->
+      <div class="posts"> 
+        <div class="post">
+            <header class="header">
+              <a class="photo" href="/">
+                <img src="/img/kgajos.png">
+              </a>
+              <a class="id" href="/">kgajos</a>
+            </header>
+            <div class="content">
+              <img class="image" src="/img/post1.jpg"/>
+            </div>
+            <div class="footer">
+              <div class="action">   
+                <a class="icon like" href="/">Like</a>  
+                <a class="icon comment" href="/">Comment</a>  
+                <a class="icon save" href="/">Save</a>  
+              </div>
+              <div class="likes">      
+                20 likes
+              </div>
+              <div class="comments">
+                <div class="comment">
+                    <a class="id" href="/">nkim</a><span>I love it!</span>
+                </div>
+              </div>
+              <time class="time">          
+                1 HOUR AGO
+              </time>
+              <div class="add-comment">
+                <form>
+                  <input type="text" placeholder="Add a comment…"></input>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    </main>
+
+    <!-- top navigation menu -->
+    <nav class="nav">
+      <div class="content">
+        <div class="left">
+          <div class="item"><a class="logo" href="/"></a></div>
+        </div>
+        <div class="right">
+          <div class="item"><a class="icon explore" href="/"></a></div>
+          <div class="item"><a class="icon activity" href="/"></a></div>
+          <div class="item"><a class="icon profile" href="/"></a></div>
+        </div>
+      </div>    
+    </nav>
+  </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+    "posts":{
+        "post_jd4111h4": {
+            "id": "post_jd4111h4",
+            "userId":"nkim",
+            "userImg":"/img/nkim.png",
+            "img":"/img/post1.jpg",
+            "likes":0,
+            "datetime":"2018-02-02T00:40:33.000Z"
+        },
+        "post_jd5ikpep": {
+            "id": "post_jd5ikpep",
+            "userId":"nkim",
+            "userImg":"/img/nkim.png",
+            "img":"/img/post2.jpg",
+            "likes":0,
+            "datetime":"2018-02-01T00:40:33.000Z"
+        },
+        "post_jd5im61v": {
+            "id": "post_jd5im61v",
+            "userId":"nkim",
+            "userImg":"/img/nkim.png",
+            "img":"/img/post3.jpg",
+            "likes":0,
+            "datetime":"2018-01-01T00:40:33.000Z"
+        }
+        
+    },
+    "comments":{
+        "comment_jd41b18j":{
+            "postId": "post_jd4111h4",
+            "userId": "nkim",
+            "text":"Let's Go Travel!"
+        }
+    }
+}
