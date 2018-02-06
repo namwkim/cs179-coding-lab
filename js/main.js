@@ -32,20 +32,34 @@ let posts = [
 /**
  * TODO 1: Add a new post using "img/posts3.jpg". Other properties remain the same.
  *  hint: generate a unique id using "uniqueId('post_')"
- *  hint: posts[id] = { ... }
+ *  hint: posts.push({ ... })
  *  hint: for "datetime", use now (i.e., new Date())
  */
+
 
 
  /**
  * TODO 2: Similarly, add a new comment for the new post.
  */
 
+posts.push({
+	id: uniqueId('post_'),
+	userId: "nkim",
+	userImg: "img/nkim.png",
+	img: "img/post3.jpg",
+	likes: 0,
+	datetime: "2018-02-01T00:40:33.000Z",
+	comments: [            {
+		userId: "nkim",                 // user id who commented
+		text: "Disney!"         // text of the comment
+	}]
+});
 
 /**
  * TODO 3: Print "posts1" and use the developer console to see if the data looks fine.
  */
 
+console.log(posts);
 
 
 function renderComment(comment) {
@@ -124,7 +138,8 @@ function render(posts) {
          * TODO 7: Print 'this' keyword to the developer console and explain what's contained in 'this'
          *  hint: who is calling this function and when
          */
-
+		console.log(this);
+		
         let postId = this.parentNode.parentNode.getAttribute('data-post-id');
         increaseLike(posts, postId);
     }));
@@ -136,7 +151,7 @@ function render(posts) {
         /**
          * TODO 8: Print 'this.value' to the developer console
          */
-
+		console.log(this.value);
 
         /**
          * TODO 9: Traverse the DOM to find the div element with a class name of 'post' and 'data-post-id'
