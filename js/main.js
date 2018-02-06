@@ -7,8 +7,8 @@ let posts = [
     {
         id: "post_jd4111h4",                    // post id
         userId: "nkim",                          // user id who created this post
-        userImg: "/img/nkim.png",                // thumbnail image of the user
-        img: "/img/post1.jpg",                   // post image
+        userImg: "img/nkim.png",                // thumbnail image of the user
+        img: "img/post1.jpg",                   // post image
         likes: 0,                                // # of likes
         datetime: "2018-02-02T00:40:33.000Z",    // time posted
         comments: [                              // user comments for this post
@@ -21,8 +21,8 @@ let posts = [
     {
         id: "post_jd5ikpep",
         userId: "nkim",
-        userImg: "/img/nkim.png",
-        img: "/img/post2.jpg",
+        userImg: "img/nkim.png",
+        img: "img/post2.jpg",
         likes: 0,
         datetime: "2018-02-01T00:40:33.000Z",
         comments: []
@@ -30,7 +30,7 @@ let posts = [
 ];
 
 /**
- * TODO 1: Add a new post using "/img/posts3.jpg". Other properties remain the same.
+ * TODO 1: Add a new post using "img/posts3.jpg". Other properties remain the same.
  *  hint: generate a unique id using "uniqueId('post_')"
  *  hint: posts[id] = { ... }
  *  hint: for "datetime", use now (i.e., new Date())
