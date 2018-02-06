@@ -51,7 +51,7 @@ let posts = [
 function renderComment(comment) {
     // using a template string to dynamically generate a HTML text
     return `<div class="comment">
-        <a class="id" href="/">${comment.userId}</a><span>${comment.text}</span>
+        <a class="id">${comment.userId}</a><span>${comment.text}</span>
     </div>`
 }
 
@@ -76,19 +76,19 @@ function renderPost(post) {
      */
     return `<div class="post" data-post-id="${post.id}">
                 <header class="header">
-                    <a class="photo" href="/">
+                    <a class="photo">
                         <img src="${post.userImg}">
                     </a>
-                    <a class="id" href="/">${post.userId}</a>
+                    <a class="id">${post.userId}</a>
                 </header>
                 <div class="content">
                     <img class="image" src="${post.img}"/>
                 </div>
                 <div class="footer">
                     <div class="action">   
-                        <a class="icon ${post.likes > 0 ? 'heart' : 'like'}" href="/">Like</a>  
-                        <a class="icon comment" href="/">Comment</a>  
-                        <a class="icon save" href="/">Save</a>  
+                        <a class="icon ${post.likes > 0 ? 'heart' : 'like'}">Like</a>  
+                        <a class="icon comment">Comment</a>  
+                        <a class="icon save">Save</a>  
                     </div>
                     <div class="likes">      
                         ${post.likes} likes
